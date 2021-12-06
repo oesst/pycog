@@ -22,7 +22,7 @@ import matplotlib.pyplot          as plt
 import mpl_toolkits.mplot3d.art3d as art3d
 
 from matplotlib.colors    import colorConverter
-from matplotlib.mlab      import PCA
+from sklearn.decomposition import PCA
 from mpl_toolkits.mplot3d import Axes3D
 from scipy.special        import cbrt
 
@@ -48,14 +48,15 @@ except subprocess.CalledProcessError:
     print("[ {} ] Warning: Couldn't find LaTeX. Your figures will look ugly."
           .format(THIS))
 else:
-    latex = True
-    mpl.rcParams['text.usetex'] = True
-    mpl.rcParams['text.latex.preamble'] = (
-        '\usepackage{sfmath}'
-        '\usepackage[T1]{fontenc}'
-        '\usepackage{amsmath}'
-        '\usepackage{amssymb}'
-        )
+    pass
+#    latex = True
+#    mpl.rcParams['text.usetex'] = True
+#    mpl.rcParams['text.latex.preamble'] = (
+#        '\usepackage{sfmath}'
+#        '\usepackage[T1]{fontenc}'
+#        '\usepackage{amsmath}'
+#        '\usepackage{amssymb}'
+#        )
 
 #=========================================================================================
 # Global defaults

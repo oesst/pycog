@@ -57,6 +57,7 @@ min_error = 0.05
 # Online training
 mode         = 'continuous'
 n_validation = 50
+method = 'sgd'
 
 #/////////////////////////////////////////////////////////////////////////////////////////
 
@@ -66,8 +67,8 @@ if __name__ == '__main__':
     model = Model(N=N, Nout=Nout, ei=ei, tau=tau, dt=dt,
                   train_brec=train_brec, train_bout=train_bout, var_rec=var_rec,
                   generate_trial=generate_trial,
-                  mode=mode, n_validation=n_validation, min_error=min_error)
-    model.train('savefile.pkl', seed=100, recover=False)
+                  mode=mode, method=method, n_validation=n_validation, min_error=min_error)
+    model.train('savefile.pkl', seed=100, recover=False, gpus=0)
 
     #-------------------------------------------------------------------------------------
     # Plot
